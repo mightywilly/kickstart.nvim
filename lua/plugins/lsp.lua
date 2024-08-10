@@ -73,7 +73,7 @@ return {
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          -- map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
@@ -82,6 +82,9 @@ return {
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+          -- lsp hover
+          map("hv", "<cmd>Lspsaga hover_doc", "LSP: [H]o[v]er")
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
@@ -253,5 +256,15 @@ return {
       })
       vim.keymap.set({ "v", "n" }, "ca", require("actions-preview").code_actions, { desc = "[C]ode [A]ctions" })
     end,
+  },
+  {
+    'nvimdev/lspsaga.nvim',
+    config = function()
+      require('lspsaga').setup({})
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',   -- optional
+      'nvim-tree/nvim-web-devicons',       -- optional
+    }
   }
 }

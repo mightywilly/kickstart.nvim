@@ -1,6 +1,7 @@
 return {
-  {
+  --[[ {
     'gennaro-tedesco/nvim-possession',
+    enabled = false,
     dependencies = {
       'ibhagwan/fzf-lua',
     },
@@ -24,5 +25,17 @@ return {
         possession.delete()
       end, { desc = '[S]ession [D]elete' })
     end,
-  },
+  }, ]]
+  {
+    'stevearc/resession.nvim',
+    config = function ()
+      require("resession").setup()
+    end,
+    init = function ()
+      local resession = require("resession")
+      vim.keymap.set("n", "<leader>ss", resession.save, {desc = "[S]ession [S]ave"})
+      vim.keymap.set("n", "<leader>sl", resession.load, {desc = "[S]ession [L]oad"})
+      vim.keymap.set("n", "<leader>sd", resession.delete, {desc = "[S]ession [D]elete"})
+    end
+  }
 }
