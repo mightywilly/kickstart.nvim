@@ -21,4 +21,3 @@ require 'start'
 
 -- Load configuration script in vimscript.
 vim.cmd("source init2.vim")
-
