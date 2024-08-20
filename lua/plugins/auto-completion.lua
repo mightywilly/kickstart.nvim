@@ -35,6 +35,7 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
+      'rcarriga/cmp-dap'
     },
     config = function()
       -- See `:help cmp`
@@ -112,8 +113,14 @@ return {
           { name = 'luasnip' },
           { name = 'path' },
           { name = 'buffer' },
+          { name = 'dap' },
         },
       }
+      cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+        sources = {
+          { name = "dap" },
+        },
+      })
     end,
   },
 }

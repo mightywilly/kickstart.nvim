@@ -79,6 +79,7 @@ return {
         typeStyle = { bold = true, italic = true },
         transparent = false,
         theme = 'dragon',
+        dimInactive = true,
       }
     end,
     init = function()

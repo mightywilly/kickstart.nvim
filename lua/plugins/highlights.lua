@@ -14,9 +14,11 @@ return {
         'diff',
         'gitignore',
         'html',
+        'json',
         'latex',
         'lua',
         'luadoc',
+        'make',
         'markdown',
         'markdown_inline',
         'python',
@@ -25,6 +27,7 @@ return {
         'vim',
         'vimdoc',
         'rust',
+        'yaml',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -53,5 +56,8 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
+    opts = {
+      multiline_threshold = 10,
+    }
   },
 }

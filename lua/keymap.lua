@@ -23,13 +23,13 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', 'wh', '<C-w><C-s>', { desc = 'Split window horizontally' })
-vim.keymap.set('n', 'wv', '<C-w><C-v>', { desc = 'Split window vertically' })
-vim.keymap.set('n', 'wq', '<C-w><C-q>', { desc = 'Quit current window' })
+vim.keymap.set('n', 'yh', '<C-w><C-s>', { desc = 'Split window horizontally' })
+vim.keymap.set('n', 'yv', '<C-w><C-v>', { desc = 'Split window vertically' })
+vim.keymap.set('n', 'qq', '<C-w><C-q>', { desc = 'Quit current window' })
 
 -- Show keymap help
 vim.keymap.set('n', 'H', '<cmd>WhichKey<cr>', { desc = 'Show keymap help', silent = true })
-vim.keymap.set('n', 'oo', '<cmd>Oil --float .<cr>', { desc = 'Open file browser', silent = true })
+vim.keymap.set('n', 'oo', '<cmd>Neotree toggle<cr>', { desc = 'Open file browser', silent = true })
 
 -- Toggle Terminal
 vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "[T]oggle Terminal" })

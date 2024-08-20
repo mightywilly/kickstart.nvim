@@ -22,6 +22,9 @@ return {
             prepend_args = { '--style=file', '--fallback-style=LLVM' },
           },
         },
+        formatters_by_ft = {
+          json = { "jq" }
+        },
         format_on_save = function(bufnr)
           if slow_fmts[vim.bo[bufnr].filetype] or vim.tbl_contains(ignored_filetypes, vim.bo[bufnr].filetype) then
             return

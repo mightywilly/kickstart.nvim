@@ -84,7 +84,7 @@ return {
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- lsp hover
-          map("hv", "<cmd>Lspsaga hover_doc", "LSP: [H]o[v]er")
+          map("hv", "<cmd>Lspsaga hover_doc<cr>", "LSP: [H]o[v]er")
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
@@ -215,6 +215,9 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'bash-language-server',
+        'jq',
+        'jq-lsp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -244,7 +247,7 @@ return {
           below = "↖ " -- when the hint is on the line below the current line
         },
         handler_opts = {
-          border = "none"
+          border = "single"
         },
       })
     end
@@ -263,8 +266,8 @@ return {
       require('lspsaga').setup({})
     end,
     dependencies = {
-      'nvim-treesitter/nvim-treesitter',   -- optional
-      'nvim-tree/nvim-web-devicons',       -- optional
+      'nvim-treesitter/nvim-treesitter', -- optional
+      'nvim-tree/nvim-web-devicons',     -- optional
     }
-  }
+  },
 }

@@ -7,6 +7,7 @@ return {
           "lazy",
           "mason",
           "oil",
+          "neo-tree"
         }
       })
       require('scrollbar.handlers.gitsigns').setup()
