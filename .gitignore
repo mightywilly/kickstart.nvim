@@ -3,6 +3,6 @@ test.sh
 .luarc.json
 nvim
 secret.lua
-
+.git
 spell/
 lazy-lock.json
